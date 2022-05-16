@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\BackSensor.cs" />
     <Compile Include="Assets\Scripts\StageGoal.cs" />
     <Compile Include="Assets\Scripts\RoomManager.cs" />
+    <Compile Include="Assets\Scripts\Progress.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

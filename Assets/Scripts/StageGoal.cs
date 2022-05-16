@@ -19,7 +19,7 @@ public class StageGoal
     {
         // HERE WE HAVE TO DEFINE CONDITIONS THAT WOULD BE NEEDED TO REACH THE GOAL
 
-        if (stage.currentStage == (Stage.StageType) 0)
+        if (stage.goalType == Stage.GoalType.amountGoal)
         {
             if (IsGoalReached())
             {
@@ -27,8 +27,8 @@ public class StageGoal
                 wasInteracted = false;
                 ReachTheGoal();
             }
-            Debug.Log("YES! STAGE ONE " + stage.currentStage);
-        } else if (stage.currentStage == (Stage.StageType)1)
+        }
+        else if (stage.goalType == Stage.GoalType.interactGoal)
         {
             if (wasInteracted)
             {
@@ -36,10 +36,6 @@ public class StageGoal
                 wasInteracted = false;
                 ReachTheGoal();
             }
-            Debug.Log("YES! STAGE TWO " + stage.currentStage);
-        } else if (stage.currentStage == (Stage.StageType)2)
-        {
-            Debug.Log("YES! STAGE THREE " + stage.currentStage);
         }
     }
 
@@ -62,4 +58,5 @@ public class StageGoal
     {
         wasInteracted = true;
     }
+
 }

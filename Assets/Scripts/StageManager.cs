@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private int currentStageId = 0;
     [SerializeField] Stage[] stages;
+    [SerializeField] Progress progress;
     Stage currentStage;
+
+    public class StangeChangedActionEventArgs : EventArgs
+    {
+        public Stage CurrentStage { get; set; }
+    }
+
+    public delegate void StageChangedAction(object source, StangeChangedActionEventArgs args);
+    public static event StageChangedAction OnStageChangedAction;
+
     private void OnEnable()
     {
         StageGoal.OnActionChanged += GoToNextStage;
+        OnStageChangedAction += _TEST;
     }
 
     private void OnDisable()
@@ -19,6 +31,10 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         currentStage = stages[currentStageId];
+        if (!progress.currentStage)
+        {
+            progress.currentStage = currentStage;
+        }
     }
 
     private void Update()
@@ -49,5 +65,16 @@ public class StageManager : MonoBehaviour
     {
         currentStageId++;
         currentStage = stages[currentStageId];
+        progress.currentStage = currentStage;
+        OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
+    }
+
+    private void _TEST(object source, StangeChangedActionEventArgs args)
+    {
+        if (args.CurrentStage.currentStage == Stage.StageType.stageOne)
+        {
+            // Stage specific code
+        }
+        
     }
 }

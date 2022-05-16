@@ -1384,6 +1384,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6e825e7d9c1c344fae1a7739afd062b, type: 2}
   - {fileID: 11400000, guid: cd377e1a1b1f69b44b5d78e74a29a9c9, type: 2}
   - {fileID: 11400000, guid: 9be40b3e0b639b846bb6e2b82ec57647, type: 2}
+  progress: {fileID: 11400000, guid: 6cf384e6d003a684e8e5198c3fd926f1, type: 2}
 --- !u!1 &883044000
 GameObject:
   m_ObjectHideFlags: 0
