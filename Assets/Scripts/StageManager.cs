@@ -15,8 +15,9 @@ public class StageManager : MonoBehaviour
         public Stage CurrentStage { get; set; }
     }
 
-    public delegate void StageChangedAction(object source, StangeChangedActionEventArgs args);
-    public static event StageChangedAction OnStageChangedAction;
+    public delegate void StageChangedAction(object source, StangeChangedActionEventArgs args); // ме рн, бн оепбшу ме пюанрюер, бн брнпшу, он бхдхлнярх, мсфем ме бнхд, ю дпсцни пер╗пм рюио
+    public event StageChangedAction OnStageChangedAction;
+
 
     private void OnEnable()
     {
@@ -67,6 +68,15 @@ public class StageManager : MonoBehaviour
         currentStage = stages[currentStageId];
         progress.currentStage = currentStage;
         OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
+        OnStageChanged();
+    }
+
+    protected virtual void OnStageChanged()
+    {
+        if (OnStageChangedAction != null)
+        {
+            OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
+        }
     }
 
     private void _TEST(object source, StangeChangedActionEventArgs args)
@@ -75,6 +85,6 @@ public class StageManager : MonoBehaviour
         {
             // Stage specific code
         }
-        
+
     }
 }
