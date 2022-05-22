@@ -350,6 +350,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/BackSensor.cs"
 "Assets/Scripts/Door.cs"
+"Assets/Scripts/DoorManager.cs"
 "Assets/Scripts/FrontSensor.cs"
 "Assets/Scripts/PlayerPresenseSensor.cs"
 "Assets/Scripts/Progress.cs"

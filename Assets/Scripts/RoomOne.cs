@@ -13,9 +13,8 @@ public class RoomOne : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z")) // DELETE (USED ONLY FOR TESTING)
         {
-            //GoToNextStage();
             stageManager.currentStage.stageGoal.MarkAsInteracted();
             stageManager.currentStage.stageGoal.CheckIfGoalIsReached();
         }

@@ -9,13 +9,14 @@ public class StageManager : MonoBehaviour
     [SerializeField] Stage[] stages;
     [SerializeField] Progress progress;
     public Stage currentStage;
+    public GameObject currentRoom;
 
     public class StangeChangedActionEventArgs : EventArgs
     {
         public Stage CurrentStage { get; set; }
     }
 
-    public delegate void StageChangedAction(object source, StangeChangedActionEventArgs args); // ме рн, бн оепбшу ме пюанрюер, бн брнпшу, он бхдхлнярх, мсфем ме бнхд, ю дпсцни пер╗пм рюио
+    public delegate void StageChangedAction(object source, StangeChangedActionEventArgs args);
     public event StageChangedAction OnStageChangedAction;
 
 
@@ -39,25 +40,18 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("x")) // DELETE (USED ONLY FOR TESTING)
         {
             //GoToNextStage();
             currentStage.stageGoal.CheckIfGoalIsReached();
         }
 
-        if (Input.GetKeyDown("y"))
+        if (Input.GetKeyDown("y"))// DELETE (USED ONLY FOR TESTING)
         {
             //GoToNextStage();
             currentStage.stageGoal.AddCurrentAmount();
             currentStage.stageGoal.CheckIfGoalIsReached();
         }
-
-        /*if (Input.GetKeyDown("z"))
-        {
-            //GoToNextStage();
-            currentStage.stageGoal.MarkAsInteracted();
-            currentStage.stageGoal.CheckIfGoalIsReached();
-        }*/
 
     }
 

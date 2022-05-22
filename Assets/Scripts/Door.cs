@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] StageManager stageManager;
+    [SerializeField] Transform roomPosition;
+    [SerializeField] DoorManager doorManager;
+
+    [SerializeField] bool TEST_OPEN_DOOR; // DELETE (USED ONLY FOR TESTING)
+
     public void OpenDoor()
     {
-
+        doorManager.DoorOpened(roomPosition);
     }
 
-    private void SpawnRoom()
+    private void Update() // DELETE (USED ONLY FOR TESTING)
     {
-
+        if (TEST_OPEN_DOOR)
+        {
+            TEST_OPEN_DOOR = false;
+            OpenDoor();
+        }
     }
 }

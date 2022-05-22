@@ -7,14 +7,22 @@ public class RoomParent : MonoBehaviour
     [SerializeField] private Stage.StageType myStageType;
     [SerializeField] private StageManager stageManager;
     [SerializeField] private GameObject childRoom;
+    [SerializeField] private DoorManager doorManager;
     private void OnEnable()
     {
         stageManager.OnStageChangedAction += CheckChangedStage;
+        doorManager.OnDoorOpenedEvent += SetRoomPosition;
     }
 
     private void OnDisable()
     {
         stageManager.OnStageChangedAction -= CheckChangedStage;
+        doorManager.OnDoorOpenedEvent -= SetRoomPosition;
+    }
+
+    private void SetRoomPosition(object source, DoorManager.DoorOpenedEventArgs args)
+    {
+        childRoom.transform.position = args.PositinToSpawnTheRoom.position;
     }
 
     private void CheckChangedStage(object source, StageManager.StangeChangedActionEventArgs args)
@@ -30,17 +38,5 @@ public class RoomParent : MonoBehaviour
                 childRoom.SetActive(false);
             }
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

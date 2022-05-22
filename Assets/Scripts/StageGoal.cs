@@ -70,11 +70,6 @@ public class StageGoal
         playerLeftTheRoom = false;
     }
 
-    /*public bool IsGoalReached()
-    {
-        return currentAmount >= requiredAmount;
-    }*/
-
     public void PlayerLeftRoom()
     {
         playerLeftTheRoom = true;
