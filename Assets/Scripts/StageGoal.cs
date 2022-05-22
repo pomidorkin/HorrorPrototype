@@ -10,6 +10,7 @@ public class StageGoal
     public int requiredAmount;
     public int currentAmount;
     public bool wasInteracted;
+    public bool playerLeftTheRoom;
 
     public delegate void ReachGoalActiom();
     public static event ReachGoalActiom OnActionChanged;
@@ -21,29 +22,64 @@ public class StageGoal
 
         if (stage.goalType == Stage.GoalType.amountGoal)
         {
-            if (IsGoalReached())
+            if (stage.stageLocationType == Stage.StageLocationType.room)
             {
-                currentAmount = 0;
-                wasInteracted = false;
-                ReachTheGoal();
+                if (currentAmount >= requiredAmount && playerLeftTheRoom)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
             }
+            else if (stage.stageLocationType == Stage.StageLocationType.corridor)
+            {
+                if (currentAmount >= requiredAmount)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
+            }
+            
         }
+
         else if (stage.goalType == Stage.GoalType.interactGoal)
         {
-            if (wasInteracted)
+            if (stage.stageLocationType == Stage.StageLocationType.room)
             {
-                currentAmount = 0;
-                wasInteracted = false;
-                ReachTheGoal();
+                if (wasInteracted && playerLeftTheRoom)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
             }
+            else if (stage.stageLocationType == Stage.StageLocationType.corridor)
+            {
+                if (wasInteracted)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
+            }
+            
         }
     }
 
-    public bool IsGoalReached()
+    private void SetGoalsToDefault()
     {
-        return currentAmount >= requiredAmount;
+        currentAmount = 0;
+        wasInteracted = false;
+        playerLeftTheRoom = false;
     }
 
+    /*public bool IsGoalReached()
+    {
+        return currentAmount >= requiredAmount;
+    }*/
+
+    public void PlayerLeftRoom()
+    {
+        playerLeftTheRoom = true;
+        CheckIfGoalIsReached();
+    }
     public void ReachTheGoal()
     {
         OnActionChanged();

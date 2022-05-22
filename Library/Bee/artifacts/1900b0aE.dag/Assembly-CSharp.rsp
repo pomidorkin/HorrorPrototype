@@ -351,6 +351,7 @@
 "Assets/Scripts/BackSensor.cs"
 "Assets/Scripts/Door.cs"
 "Assets/Scripts/FrontSensor.cs"
+"Assets/Scripts/PlayerPresenseSensor.cs"
 "Assets/Scripts/Progress.cs"
 "Assets/Scripts/RoomManager.cs"
 "Assets/Scripts/RoomOne.cs"

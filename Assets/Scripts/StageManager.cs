@@ -8,7 +8,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private int currentStageId = 0;
     [SerializeField] Stage[] stages;
     [SerializeField] Progress progress;
-    Stage currentStage;
+    public Stage currentStage;
 
     public class StangeChangedActionEventArgs : EventArgs
     {
@@ -22,7 +22,6 @@ public class StageManager : MonoBehaviour
     private void OnEnable()
     {
         StageGoal.OnActionChanged += GoToNextStage;
-        OnStageChangedAction += _TEST;
     }
 
     private void OnDisable()
@@ -53,12 +52,12 @@ public class StageManager : MonoBehaviour
             currentStage.stageGoal.CheckIfGoalIsReached();
         }
 
-        if (Input.GetKeyDown("z"))
+        /*if (Input.GetKeyDown("z"))
         {
             //GoToNextStage();
             currentStage.stageGoal.MarkAsInteracted();
             currentStage.stageGoal.CheckIfGoalIsReached();
-        }
+        }*/
 
     }
 
@@ -68,23 +67,6 @@ public class StageManager : MonoBehaviour
         currentStage = stages[currentStageId];
         progress.currentStage = currentStage;
         OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
-        OnStageChanged();
     }
 
-    protected virtual void OnStageChanged()
-    {
-        if (OnStageChangedAction != null)
-        {
-            OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
-        }
-    }
-
-    private void _TEST(object source, StangeChangedActionEventArgs args)
-    {
-        if (args.CurrentStage.currentStage == Stage.StageType.stageOne)
-        {
-            // Stage specific code
-        }
-
-    }
 }
