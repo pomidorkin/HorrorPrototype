@@ -22,7 +22,8 @@ public class RoomParent : MonoBehaviour
 
     private void SetRoomPosition(object source, DoorManager.DoorOpenedEventArgs args)
     {
-        childRoom.transform.position = args.PositinToSpawnTheRoom.position;
+        //childRoom.transform.position = args.PositinToSpawnTheRoom.position;
+        gameObject.transform.position = args.PositinToSpawnTheRoom.position;
     }
 
     private void CheckChangedStage(object source, StageManager.StangeChangedActionEventArgs args)
