@@ -40,7 +40,7 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("x")) // DELETE (USED ONLY FOR TESTING)
+        /*if (Input.GetKeyDown("x")) // DELETE (USED ONLY FOR TESTING)
         {
             //GoToNextStage();
             currentStage.stageGoal.CheckIfGoalIsReached();
@@ -51,7 +51,7 @@ public class StageManager : MonoBehaviour
             //GoToNextStage();
             currentStage.stageGoal.AddCurrentAmount();
             currentStage.stageGoal.CheckIfGoalIsReached();
-        }
+        }*/
 
     }
 

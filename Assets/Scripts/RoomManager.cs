@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        /*if (Input.GetKeyDown("space"))
         {
             if (testCounter == 0)
             {
@@ -38,6 +38,6 @@ public class RoomManager : MonoBehaviour
                 rooms[2].gameObject.SetActive(true);
                 testCounter++;
             }
-        }
+        }*/
     }
 }
