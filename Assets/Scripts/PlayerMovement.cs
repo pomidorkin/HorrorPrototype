@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-
+    // NEW INPUT SYSTEM TEST
     private void Awake()
     {
         plyerInputActions = new PlyerInputActions();
@@ -27,32 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Projecting a sphere that checks if we are grounded
-
-        /*isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
         // Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);*/
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -60,25 +35,26 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
+        if (!isGrounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+
+        controller.Move(velocity * Time.deltaTime);
+
+        // Moving
         Vector2 inputVector = plyerInputActions.Player.Movement.ReadValue<Vector2>();
-        //controller.Move(new Vector3(inputVector.x, 0, inputVector.y) * speed * Time.deltaTime);
         float x = inputVector.x;
         float z = inputVector.y;
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
     }
-
-    // NEW INPUT SYSTEM TEST
-
     public void Jump(InputAction.CallbackContext context)
     {
         if (isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
+        
     }
 }
