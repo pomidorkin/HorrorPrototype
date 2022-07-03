@@ -61,7 +61,6 @@
     <Compile Include="Assets\Scripts\DoorManager.cs" />
     <Compile Include="Assets\Scripts\FrontSensor.cs" />
     <Compile Include="Assets\Scripts\Stage.cs" />
-    <Compile Include="Assets\Scripts\PlyerInputActions.cs" />
     <Compile Include="Assets\Scripts\BackSensor.cs" />
     <Compile Include="Assets\Scripts\RoomTwo.cs" />
     <Compile Include="Assets\Scripts\PlayerPresenseSensor.cs" />
@@ -72,6 +71,7 @@
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\RoomManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\PlyerInputActions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
