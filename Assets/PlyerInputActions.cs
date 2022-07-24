@@ -78,7 +78,7 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e3d5d193-5d3e-452b-936a-3641f4ab5b9a"",
+                    ""id"": ""addc0e77-ad5a-42dd-bca0-32b989ac4a30"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -144,17 +144,6 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f2ec85cd-f24c-47bc-8b0e-fc1038ba313a"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ea34f6ca-bcee-4143-8655-488086b4716a"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -177,7 +166,7 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fe8628f1-c783-40aa-a2ea-7b5245ffb98b"",
+                    ""id"": ""e9fb852e-51b6-4eb6-9f82-e5499aa0e0fa"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
