@@ -5,22 +5,31 @@ using System;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] private PlayerActions playerActions;
     [SerializeField] Transform roomPosition;
     [SerializeField] DoorManager doorManager;
 
-    [SerializeField] public bool TEST_OPEN_DOOR; // DELETE (USED ONLY FOR TESTING)
-
-    public void OpenDoor()
+    private void Start()
     {
-        doorManager.DoorOpened(roomPosition);
+        playerActions = FindObjectOfType<PlayerActions>();
     }
 
-    private void Update() // DELETE (USED ONLY FOR TESTING)
+    public void OpenDoor(RaycastHit hit)
     {
-        if (TEST_OPEN_DOOR)
+        if (hit.transform == this.transform)
         {
-            TEST_OPEN_DOOR = false;
-            OpenDoor();
+            Debug.Log("I am the door and I am being opened...");
+            doorManager.DoorOpened(roomPosition);
         }
+    }
+
+    private void OnEnable()
+    {
+        playerActions.OnInteractedAction += OpenDoor;
+    }
+
+    private void OnDisable()
+    {
+        playerActions.OnInteractedAction -= OpenDoor;
     }
 }
