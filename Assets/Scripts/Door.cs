@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] Transform roomPosition;
     [SerializeField] DoorManager doorManager;
 
-    [SerializeField] bool TEST_OPEN_DOOR; // DELETE (USED ONLY FOR TESTING)
+    [SerializeField] public bool TEST_OPEN_DOOR; // DELETE (USED ONLY FOR TESTING)
 
     public void OpenDoor()
     {

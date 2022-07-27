@@ -10,15 +10,4 @@ public class RoomOne : MonoBehaviour
         Debug.Log("Hey, I am running code from ROOM ONE");
         // Stage-specific code
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown("z")) // DELETE (USED ONLY FOR TESTING)
-        {
-            stageManager.currentStage.stageGoal.MarkAsInteracted();
-            stageManager.currentStage.stageGoal.CheckIfGoalIsReached();
-        }
-    }
-
-
 }

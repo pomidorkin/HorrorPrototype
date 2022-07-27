@@ -155,6 +155,17 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2843a168-05ca-40a5-8840-6b04e1337429"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""JOY"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ea34f6ca-bcee-4143-8655-488086b4716a"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -218,6 +229,22 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""JOY"",
+            ""bindingGroup"": ""JOY"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<HID::Twin USB Joystick>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<HID::TwiB USB Jocsti>"",
                     ""isOptional"": true,
                     ""isOR"": false
                 }
@@ -359,6 +386,15 @@ public partial class @PlyerInputActions : IInputActionCollection2, IDisposable
         {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
+    private int m_JOYSchemeIndex = -1;
+    public InputControlScheme JOYScheme
+    {
+        get
+        {
+            if (m_JOYSchemeIndex == -1) m_JOYSchemeIndex = asset.FindControlSchemeIndex("JOY");
+            return asset.controlSchemes[m_JOYSchemeIndex];
         }
     }
     public interface IPlayerActions

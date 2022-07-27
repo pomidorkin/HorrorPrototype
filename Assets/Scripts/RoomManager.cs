@@ -1,43 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] rooms;
-    private int testCounter = 0;
+    [SerializeField] private DoorManager doorManager;
+    [SerializeField] RoomParent[] parentRooms;
+    [SerializeField] private StageManager stageManager;
 
-    private void Update()
+    private void OnEnable()
     {
-        /*if (Input.GetKeyDown("space"))
+        doorManager.OnDoorOpenedEvent += SpawnRoom;
+    }
+
+    private void OnDisable()
+    {
+        doorManager.OnDoorOpenedEvent -= SpawnRoom;
+    }
+
+    private void SpawnRoom(object source, DoorManager.DoorOpenedEventArgs args)
+    {
+        foreach (RoomParent rp in parentRooms)
         {
-            if (testCounter == 0)
+            rp.SetChildActive(false);
+            if (rp.myStageType == stageManager.currentStage.currentStage)
             {
-                foreach (GameObject room in rooms)
-                {
-                    room.gameObject.SetActive(false);
-                }
-                rooms[0].gameObject.SetActive(true);
-                testCounter++;
+                rp.SetChildActive(true);
             }
-            else if (testCounter == 1)
-            {
-                foreach (GameObject room in rooms)
-                {
-                    room.gameObject.SetActive(false);
-                }
-                rooms[1].gameObject.SetActive(true);
-                testCounter++;
-            }
-            else
-            {
-                foreach (GameObject room in rooms)
-                {
-                    room.gameObject.SetActive(false);
-                }
-                rooms[2].gameObject.SetActive(true);
-                testCounter++;
-            }
-        }*/
+        }
+
     }
 }

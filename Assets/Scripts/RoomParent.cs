@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomParent : MonoBehaviour
 {
-    [SerializeField] private Stage.StageType myStageType;
+    [SerializeField] public Stage.StageType myStageType;
     [SerializeField] private StageManager stageManager;
     [SerializeField] private GameObject childRoom;
     [SerializeField] private DoorManager doorManager;
@@ -22,8 +22,10 @@ public class RoomParent : MonoBehaviour
 
     private void SetRoomPosition(object source, DoorManager.DoorOpenedEventArgs args)
     {
-        //childRoom.transform.position = args.PositinToSpawnTheRoom.position;
-        gameObject.transform.position = args.PositinToSpawnTheRoom.position;
+        if (myStageType == stageManager.currentStage.currentStage)
+        {
+            gameObject.transform.position = args.PositinToSpawnTheRoom.position;
+        }
     }
 
     private void CheckChangedStage(object source, StageManager.StangeChangedActionEventArgs args)
@@ -39,5 +41,10 @@ public class RoomParent : MonoBehaviour
                 childRoom.SetActive(false);
             }
         }
+    }
+
+    public void SetChildActive(bool active)
+    {
+        childRoom.gameObject.SetActive(active);
     }
 }

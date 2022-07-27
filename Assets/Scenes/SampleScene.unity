@@ -1642,10 +1642,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc912c91a48dc8c49a0272e31546153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
-  - {fileID: 814397520}
-  - {fileID: 318496937}
-  - {fileID: 1167519696}
+  doorManager: {fileID: 822073216}
+  parentRooms:
+  - {fileID: 1794052570}
+  - {fileID: 930351471}
+  stageManager: {fileID: 822073215}
 --- !u!4 &822073214
 Transform:
   m_ObjectHideFlags: 0
@@ -1680,7 +1681,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9be40b3e0b639b846bb6e2b82ec57647, type: 2}
   progress: {fileID: 11400000, guid: 6cf384e6d003a684e8e5198c3fd926f1, type: 2}
   currentStage: {fileID: 0}
-  currentRoom: {fileID: 0}
 --- !u!114 &822073216
 MonoBehaviour:
   m_ObjectHideFlags: 0

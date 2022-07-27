@@ -9,7 +9,6 @@ public class StageManager : MonoBehaviour
     [SerializeField] Stage[] stages;
     [SerializeField] Progress progress;
     public Stage currentStage;
-    public GameObject currentRoom;
 
     public class StangeChangedActionEventArgs : EventArgs
     {
@@ -36,23 +35,6 @@ public class StageManager : MonoBehaviour
         {
             progress.currentStage = currentStage;
         }
-    }
-
-    private void Update()
-    {
-        /*if (Input.GetKeyDown("x")) // DELETE (USED ONLY FOR TESTING)
-        {
-            //GoToNextStage();
-            currentStage.stageGoal.CheckIfGoalIsReached();
-        }
-
-        if (Input.GetKeyDown("y"))// DELETE (USED ONLY FOR TESTING)
-        {
-            //GoToNextStage();
-            currentStage.stageGoal.AddCurrentAmount();
-            currentStage.stageGoal.CheckIfGoalIsReached();
-        }*/
-
     }
 
     private void GoToNextStage()

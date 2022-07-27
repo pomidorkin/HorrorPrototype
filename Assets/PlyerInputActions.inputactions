@@ -133,6 +133,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2843a168-05ca-40a5-8840-6b04e1337429",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "JOY",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ea34f6ca-bcee-4143-8655-488086b4716a",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -196,6 +207,22 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "JOY",
+            "bindingGroup": "JOY",
+            "devices": [
+                {
+                    "devicePath": "<HID::Twin USB Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HID::TwiB USB Jocsti>",
                     "isOptional": true,
                     "isOR": false
                 }

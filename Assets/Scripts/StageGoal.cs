@@ -83,11 +83,13 @@ public class StageGoal
     public void AddCurrentAmount()
     {
         currentAmount++;
+        CheckIfGoalIsReached();
     }
 
     public void MarkAsInteracted()
     {
         wasInteracted = true;
+        CheckIfGoalIsReached();
     }
 
 }
