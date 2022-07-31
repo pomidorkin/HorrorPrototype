@@ -1680,6 +1680,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd377e1a1b1f69b44b5d78e74a29a9c9, type: 2}
   - {fileID: 11400000, guid: 9be40b3e0b639b846bb6e2b82ec57647, type: 2}
   progress: {fileID: 11400000, guid: 6cf384e6d003a684e8e5198c3fd926f1, type: 2}
+  gameManager: {fileID: 1691485524}
   currentStage: {fileID: 0}
 --- !u!114 &822073216
 MonoBehaviour:
@@ -1938,6 +1939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 5
   playerBody: {fileID: 1028167399}
+  cameraMaxLook: -60
+  cameraMinLook: 60
 --- !u!1 &1028167397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +1985,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028167397}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1992,7 +1995,7 @@ Transform:
   - {fileID: 1830291086}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1028167400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3729,6 +3732,53 @@ MonoBehaviour:
   - {fileID: 97709180}
   - {fileID: 1902440346}
   player: {fileID: 169776406}
+--- !u!1 &1691485523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691485525}
+  - component: {fileID: 1691485524}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1691485524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691485523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4045039eba094cb720a574c289353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: {fileID: 11400000, guid: 6cf384e6d003a684e8e5198c3fd926f1, type: 2}
+  saveManager: {fileID: 0}
+  savedStage: {fileID: 0}
+--- !u!4 &1691485525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691485523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.931165, y: 0.8692322, z: 1.8485146}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717008380
 GameObject:
   m_ObjectHideFlags: 0

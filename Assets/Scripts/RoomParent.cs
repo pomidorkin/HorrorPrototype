@@ -26,11 +26,18 @@ public class RoomParent : MonoBehaviour
         {
             gameObject.transform.position = args.PositinToSpawnTheRoom.position;
         }
+        Debug.Log("SetRoomPosition(); " + "myStageType: " + myStageType + "stageManager.currentStage.currentStage: " + stageManager.currentStage.currentStage);
     }
 
     private void CheckChangedStage(object source, StageManager.StangeChangedActionEventArgs args)
     {
-        if (args.CurrentStage.currentStage == myStageType)
+        SpawnRoom(args.CurrentStage);
+        Debug.Log("CheckChangedStage();");
+    }
+
+    public void SpawnRoom(Stage stage)
+    {
+        if (stage.currentStage == myStageType)
         {
             childRoom.SetActive(true);
         }
@@ -41,10 +48,13 @@ public class RoomParent : MonoBehaviour
                 childRoom.SetActive(false);
             }
         }
+
+        Debug.Log("SpawnRoom(stage);");
     }
 
-    public void SetChildActive(bool active)
+    public void SpawnRoom(bool active)
     {
         childRoom.gameObject.SetActive(active);
+        Debug.Log("SpawnRoom(" + active + ");");
     }
 }

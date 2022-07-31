@@ -18,15 +18,18 @@ public class RoomManager : MonoBehaviour
     {
         doorManager.OnDoorOpenedEvent -= SpawnRoom;
     }
-
     private void SpawnRoom(object source, DoorManager.DoorOpenedEventArgs args)
     {
         foreach (RoomParent rp in parentRooms)
         {
-            rp.SetChildActive(false);
+
             if (rp.myStageType == stageManager.currentStage.currentStage)
             {
-                rp.SetChildActive(true);
+                rp.SpawnRoom(true);
+            }
+            else
+            {
+                rp.SpawnRoom(false);
             }
         }
 

@@ -8,6 +8,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private int currentStageId = 0;
     [SerializeField] Stage[] stages;
     [SerializeField] Progress progress;
+    [SerializeField] GameManagerScript gameManager;
     public Stage currentStage;
 
     public class StangeChangedActionEventArgs : EventArgs
@@ -30,10 +31,23 @@ public class StageManager : MonoBehaviour
     }
     private void Start()
     {
-        currentStage = stages[currentStageId];
-        if (!progress.currentStage)
+        if (!gameManager.saveManager.State.firstStart)
         {
-            progress.currentStage = currentStage;
+            while (gameManager.savedStage.currentStage != stages[currentStageId].currentStage)
+            {
+                currentStageId++;
+                Debug.Log("currentStageId: " + currentStageId);
+            }
+            currentStage = gameManager.savedStage;
+            InvokeStageCheck(gameManager.savedStage);
+        }
+        else
+        {
+            currentStage = stages[currentStageId];
+            if (!progress.currentStage)
+            {
+                progress.currentStage = currentStage;
+            }
         }
     }
 
@@ -43,6 +57,13 @@ public class StageManager : MonoBehaviour
         currentStage = stages[currentStageId];
         progress.currentStage = currentStage;
         OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
+        Debug.Log("GoToNextStage();");
+    }
+
+    public void InvokeStageCheck(Stage stage)
+    {
+        OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = stage });
+        Debug.Log("InvokeStageCheck();");
     }
 
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   goalType: 1
   stageLocationType: 0
   stageGoal:
-    stage: {fileID: 11400000}
+    stage: {fileID: 11400000, guid: f6e825e7d9c1c344fae1a7739afd062b, type: 2}
     requiredAmount: 0
     currentAmount: 0
     wasInteracted: 0
