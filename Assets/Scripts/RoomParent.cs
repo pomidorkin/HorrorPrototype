@@ -8,6 +8,7 @@ public class RoomParent : MonoBehaviour
     [SerializeField] private StageManager stageManager;
     [SerializeField] private GameObject childRoom;
     [SerializeField] private DoorManager doorManager;
+    bool isRotated = false;
     private void OnEnable()
     {
         stageManager.OnStageChangedAction += CheckChangedStage;
@@ -24,6 +25,17 @@ public class RoomParent : MonoBehaviour
     {
         if (myStageType == stageManager.currentStage.currentStage)
         {
+            // Rotating room 180 degrees if the room is on the right
+            if (args.IsRightDoor && !isRotated)
+            {
+                gameObject.transform.rotation *= Quaternion.Euler(0, 180f, 0);
+                isRotated = true;
+            }
+            else if (!args.IsRightDoor && isRotated)
+            {
+                gameObject.transform.rotation *= Quaternion.Euler(0, -180f, 0);
+                isRotated = false;
+            }
             gameObject.transform.position = args.PositinToSpawnTheRoom.position;
         }
         Debug.Log("SetRoomPosition(); " + "myStageType: " + myStageType + "stageManager.currentStage.currentStage: " + stageManager.currentStage.currentStage);

@@ -5,6 +5,7 @@ using System;
 
 public class Door : MonoBehaviour, IInteractable
 {
+    [SerializeField] bool isRightDoor = false;
     [SerializeField] private PlayerActions playerActions;
     [SerializeField] Transform roomPosition;
     [SerializeField] DoorManager doorManager;
@@ -21,7 +22,7 @@ public class Door : MonoBehaviour, IInteractable
         if (hit.transform == this.transform)
         {
             Debug.Log("I am the door and I am being opened...");
-            doorManager.DoorOpened(roomPosition);
+            doorManager.DoorOpened(roomPosition, isRightDoor);
         }
     }
 
