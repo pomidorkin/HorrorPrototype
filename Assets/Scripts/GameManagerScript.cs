@@ -7,7 +7,19 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Progress progress;
     public SaveManager saveManager;
     public Stage savedStage;
-    void Start()
+    /*void Start()
+    {
+        saveManager = SaveManager.Instance;
+        SaveManager.Instance.Load();
+        if (!saveManager.State.firstStart)
+        {
+            savedStage = progress.currentStage;
+        }
+
+        ResumeGame();
+    }*/
+
+    private void OnEnable()
     {
         saveManager = SaveManager.Instance;
         SaveManager.Instance.Load();

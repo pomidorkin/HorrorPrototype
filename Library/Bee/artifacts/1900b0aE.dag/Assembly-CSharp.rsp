@@ -357,6 +357,7 @@
 "Assets/Scripts/DoorManager.cs"
 "Assets/Scripts/FrontSensor.cs"
 "Assets/Scripts/GameManagerScript.cs"
+"Assets/Scripts/IInteractable.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/PlayerActions.cs"
 "Assets/Scripts/PlayerMovement.cs"

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
-public class TEST_INTERACTION : MonoBehaviour
+public class TEST_INTERACTION : MonoBehaviour, IInteractable
 {
     [SerializeField] private PlayerActions playerActions;
     StageManager stageManager;
+    string interactionText = "Interact";
 
     private void OnEnable()
     {
@@ -30,5 +32,10 @@ public class TEST_INTERACTION : MonoBehaviour
             Debug.Log("I am the cube and I am being interacted with...");
             stageManager.currentStage.stageGoal.MarkAsInteracted();
         }
+    }
+
+    public string GetInteractionText()
+    {
+        return interactionText;
     }
 }
