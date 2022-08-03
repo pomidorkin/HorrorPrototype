@@ -51,6 +51,14 @@ public class PlayerActions : MonoBehaviour
             
         }
 
+        else if (active && isPromptTextActive && (hit.transform.GetComponent<IInteractable>() == null))
+        {
+            promptText.gameObject.SetActive(false);
+            promptText.text = "";
+            isPromptTextActive = false;
+
+        }
+
     }
 
     public void Interact(InputAction.CallbackContext context)
