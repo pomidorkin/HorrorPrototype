@@ -11,7 +11,8 @@ public class MyParamCube : MonoBehaviour
         // My Code
         if (AudioPeer.bandBuffer[band] > animTriggerValue)
         {
-            gameObject.GetComponent<Animator>().Play("SlammAnimation");
+            // Commented out for testing
+            //gameObject.GetComponent<Animator>().Play("SlammAnimation");
         }
 
     }

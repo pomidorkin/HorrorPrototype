@@ -9,7 +9,13 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private PlayerActions playerActions;
     [SerializeField] Transform roomPosition;
     [SerializeField] DoorManager doorManager;
+    [SerializeField] Animator animator;
     string interactionText = "Open Door";
+    string closeInteractionText = "Close Door";
+
+    [SerializeField] bool isOpened = false;
+    [SerializeField] bool canBeOpened = false;
+    [SerializeField] bool isInteractable = true;
 
     private void Start()
     {
@@ -21,8 +27,23 @@ public class Door : MonoBehaviour, IInteractable
         // TODO: Toggle the boolean field (Open/Closed)
         if (hit.transform == this.transform)
         {
-            Debug.Log("I am the door and I am being opened...");
-            doorManager.DoorOpened(roomPosition, isRightDoor);
+            if (!isOpened && canBeOpened)
+            {
+                animator.Play("OpenAnimation");
+                isOpened = true;
+                Debug.Log("I am the door and I am being opened...");
+                doorManager.DoorOpened(roomPosition, isRightDoor);
+            }
+            else if (!isOpened && !canBeOpened)
+            {
+                animator.Play("DoorLockedAnimation");
+            }
+            else
+            {
+                animator.Play("CloseAnimation");
+                isOpened = false;
+            }
+            
         }
     }
 
@@ -39,6 +60,17 @@ public class Door : MonoBehaviour, IInteractable
     public string GetInteractionText()
     {
         // TODO: Return different text depending on the state of the door (Open/Closed)
-        return interactionText;
+        if (!isOpened && isInteractable)
+        {
+            return interactionText;
+        }
+        else if(isOpened && isInteractable)
+        {
+            return closeInteractionText;
+        }
+        else
+        {
+            return "";
+        }
     }
 }
