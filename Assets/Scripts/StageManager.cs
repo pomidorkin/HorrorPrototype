@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using TMPro;
 
 public class StageManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] Stage[] stages;
     [SerializeField] Progress progress;
     [SerializeField] GameManagerScript gameManager;
+    [SerializeField] TMP_Text questText;
     public Stage currentStage;
 
     public class StangeChangedActionEventArgs : EventArgs
@@ -49,6 +51,8 @@ public class StageManager : MonoBehaviour
                 progress.currentStage = currentStage;
             }
         }
+
+        SetQuestText();
     }
 
     private void GoToNextStage()
@@ -58,12 +62,19 @@ public class StageManager : MonoBehaviour
         progress.currentStage = currentStage;
         OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = currentStage });
         Debug.Log("GoToNextStage();");
+
+        SetQuestText();
     }
 
     public void InvokeStageCheck(Stage stage)
     {
         OnStageChangedAction(this, new StangeChangedActionEventArgs() { CurrentStage = stage });
         Debug.Log("InvokeStageCheck();");
+    }
+
+    private void SetQuestText()
+    {
+        questText.text = currentStage.questText;
     }
 
 }
