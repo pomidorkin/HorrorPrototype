@@ -6,12 +6,12 @@ using UnityEngine.AI;
 public class AiLocomotion : MonoBehaviour
 {
     NavMeshAgent agent;
-    [SerializeField] Animator animator;
+    [SerializeField] Animator animator;/*
     [SerializeField] Transform playerTransform;
     [SerializeField] float maxTime = 1f;
     [SerializeField] float maxDistance = 1f;
 
-    float timer = 0;
+    float timer = 0;*/
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class AiLocomotion : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        /*timer -= Time.deltaTime;
         if (timer < 0f)
         {
             float sqDistance = (playerTransform.position - agent.destination).sqrMagnitude;
@@ -30,7 +30,7 @@ public class AiLocomotion : MonoBehaviour
             }
             timer = maxTime;
             
-        }
+        }*/
 
         //animator.SetFloat("Speed", /*agent.velocity.magnitude*/ agent.speed);
 

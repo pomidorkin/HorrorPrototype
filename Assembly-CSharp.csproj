@@ -56,16 +56,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI\AiAgent.cs" />
+    <Compile Include="Assets\Scripts\AI\AiSensor.cs" />
     <Compile Include="Assets\Scripts\Saving System\SaveManager.cs" />
     <Compile Include="Assets\Scripts\StageManager.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\RoomOne.cs" />
+    <Compile Include="Assets\Scripts\AI\AiChasePlayerScript.cs" />
+    <Compile Include="Assets\Scripts\AI\AiStateMachine.cs" />
     <Compile Include="Assets\Scripts\IInteractable.cs" />
     <Compile Include="Assets\Scripts\DoorManager.cs" />
     <Compile Include="Assets\Scripts\TEST_INTERACTION.cs" />
     <Compile Include="Assets\Scripts\FrontSensor.cs" />
     <Compile Include="Assets\Scripts\AI\AgentLinkMover.cs" />
     <Compile Include="Assets\Scripts\Stage.cs" />
+    <Compile Include="Assets\Scripts\AI\AiAgentConfig.cs" />
     <Compile Include="Assets\Scripts\AudioVisualization\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BackSensor.cs" />
     <Compile Include="Assets\Scripts\AudioVisualization\MyParamCube.cs" />
@@ -73,13 +78,16 @@
     <Compile Include="Assets\Scripts\PlayerPresenseSensor.cs" />
     <Compile Include="Assets\Scripts\Progress.cs" />
     <Compile Include="Assets\Scripts\PlayerActions.cs" />
+    <Compile Include="Assets\Scripts\AI\AiDeathState.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\StageGoal.cs" />
     <Compile Include="Assets\Scripts\RoomParent.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\AI\AiLocomotion.cs" />
     <Compile Include="Assets\Scripts\RoomManager.cs" />
+    <Compile Include="Assets\Scripts\AI\AiIdleState.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\AI\AiState.cs" />
     <Compile Include="Assets\Scripts\AudioVisualization\AudioPeer.cs" />
     <Compile Include="Assets\PlyerInputActions.cs" />
     <Compile Include="Assets\Scripts\Saving System\SavingData.cs" />
