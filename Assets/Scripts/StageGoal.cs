@@ -61,6 +61,27 @@ public class StageGoal
             }
             
         }
+
+        else if (stage.goalType == Stage.GoalType.bothAmountInteract)
+        {
+            if (stage.stageLocationType == Stage.StageLocationType.room)
+            {
+                if (wasInteracted && playerLeftTheRoom && currentAmount >= requiredAmount)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
+            }
+            else if (stage.stageLocationType == Stage.StageLocationType.corridor)
+            {
+                if (wasInteracted && currentAmount >= requiredAmount)
+                {
+                    SetGoalsToDefault();
+                    ReachTheGoal();
+                }
+            }
+
+        }
     }
 
     private void SetGoalsToDefault()

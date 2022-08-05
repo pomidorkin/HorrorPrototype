@@ -13,9 +13,9 @@ public class Door : MonoBehaviour, IInteractable
     string interactionText = "Open Door";
     string closeInteractionText = "Close Door";
 
-    [SerializeField] bool isOpened = false;
-    [SerializeField] bool canBeOpened = false;
-    [SerializeField] bool isInteractable = true;
+    [SerializeField] public bool isOpened = false;
+    [SerializeField] public bool canBeOpened = false;
+    [SerializeField] public bool isInteractable = true;
 
     private void Start()
     {
@@ -44,6 +44,15 @@ public class Door : MonoBehaviour, IInteractable
                 isOpened = false;
             }
             
+        }
+    }
+
+    public void CloseDoor()
+    {
+        if (this.isOpened)
+        {
+            animator.Play("CloseAnimation");
+            isOpened = false;
         }
     }
 
