@@ -8,7 +8,12 @@ public class FrontSensor : MonoBehaviour
     [SerializeField] GameObject[] segments;
     [SerializeField] GameObject player;
     private int numberOfSegments = 2;
-    private float incrementValue = 10f;
+    private float incrementValue;
+
+    private void OnEnable()
+    {
+        incrementValue = segments[0].GetComponent<BoxCollider>().size.x;
+    }
     private void OnTriggerEnter(Collider other)
     {
         transform.position = new Vector3(transform.position.x + incrementValue, transform.position.y, transform.position.z);

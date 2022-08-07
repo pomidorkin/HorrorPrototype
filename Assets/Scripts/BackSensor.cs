@@ -8,7 +8,12 @@ public class BackSensor : MonoBehaviour
     [SerializeField] GameObject[] segments;
     [SerializeField] GameObject player;
     private int numberOfSegments = 2;
-    private float decrementValue = 10f;
+    private float decrementValue;
+
+    private void OnEnable()
+    {
+        decrementValue = segments[0].GetComponent<BoxCollider>().size.x;
+    }
     private void OnTriggerEnter(Collider other)
     {
         transform.position = new Vector3(transform.position.x - decrementValue, transform.position.y, transform.position.z);

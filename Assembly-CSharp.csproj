@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2021.2.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\AI\AiAgent.cs" />
     <Compile Include="Assets\Scripts\AI\AiSensor.cs" />
     <Compile Include="Assets\Scripts\Saving System\SaveManager.cs" />
@@ -76,8 +79,11 @@
     <Compile Include="Assets\Scripts\Progress.cs" />
     <Compile Include="Assets\Scripts\PlayerActions.cs" />
     <Compile Include="Assets\Scripts\AI\AiDeathState.cs" />
+    <Compile Include="Assets\Scripts\AllDoorController.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\CorridorStageSpecificScripts\CorridorStageOne.cs" />
     <Compile Include="Assets\Scripts\StageGoal.cs" />
+    <Compile Include="Assets\Scripts\CorridorStageParent.cs" />
     <Compile Include="Assets\Scripts\RoomParent.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\AI\AiLocomotion.cs" />
@@ -88,9 +94,6 @@
     <Compile Include="Assets\Scripts\AudioVisualization\AudioPeer.cs" />
     <Compile Include="Assets\PlyerInputActions.cs" />
     <Compile Include="Assets\Scripts\Saving System\SavingData.cs" />
-    <Compile Include="Assets\Scripts\CorridorStageParent.cs" />
-    <Compile Include="Assets\Scripts\CorridorStageSpecificScripts\CorridorStageOne.cs" />
-    <Compile Include="Assets\Scripts\AllDoorController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
