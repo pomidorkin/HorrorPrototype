@@ -18,6 +18,7 @@ public class CorridorLightSource : MonoBehaviour
 
     private void Update()
     {
-        light.intensity = 1.0f - (Mathf.InverseLerp(0, lightOffDistance * lightOffDistance, (transform.position - player.position).sqrMagnitude));
+        //light.intensity = 1.0f - (Mathf.InverseLerp(0, lightOffDistance * lightOffDistance, (transform.position.x - player.position.x) * (transform.position.x - player.position.x)); 
+        light.intensity = 1.0f - (Mathf.InverseLerp(0, lightOffDistance * lightOffDistance, Mathf.Pow((transform.position.x - player.position.x), 2)));
     }
 }

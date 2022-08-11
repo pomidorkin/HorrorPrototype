@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,41 +53,44 @@
     <UnityVersion>2021.2.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EditorPrefsStrings.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MinMaxRangeFloat.cs" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\VolumetricLightBeam.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\HighlightNullAttribute.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionRaycasting.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialManager.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionDepthBuffer.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Config.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\VolumetricDustParticles.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Noise3D.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DummyMaterial.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\CachedLightProperties.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SkewingHandle.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Enums.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\GlobalMesh.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderKeywords.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Utils.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderGenerator.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectPulse.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectAbstractBase.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionAbstractBase.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PolygonHelper.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderProperties.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectFlicker.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Version.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialModifier.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\TriggerZone.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ConfigOverride.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PlatformHelper.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SRPHelper.cs" />
-    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\TransformUtils.cs" />
     <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\BatchingHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectPulse.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\CachedLightProperties.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderProperties.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\GlobalMesh.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderKeywords.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionRaycasting.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionDepthBuffer.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialModifier.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Noise3D.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PlatformHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DummyMaterial.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderGenerator.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\HighlightNullAttribute.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\VolumetricDustParticles.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionAbstractBase.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Version.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MinMaxRangeFloat.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Enums.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MeshGenerator.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PolygonHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectFlicker.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EditorPrefsStrings.cs" />
     <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Consts.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SkewingHandle.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Config.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ConfigOverride.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\TriggerZone.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialManager.cs" />
     <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\BeamGeometry.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Utils.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SRPHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectAbstractBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_hdrp.txt" />
