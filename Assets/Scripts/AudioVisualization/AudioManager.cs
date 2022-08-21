@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioMixer mixer;
+   /* [SerializeField] AudioMixer mixer;
     [SerializeField] AudioSource audioSourceMuted;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AnimationClip animationClip;
@@ -25,5 +25,5 @@ public class AudioManager : MonoBehaviour
     public AudioSource GetAudioSource()
     {
         return audioSourceMuted;
-    }
+    }*/
 }

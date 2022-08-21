@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioPeer : MonoBehaviour
 {
-    //[SerializeField] AudioSource audioSource;
+    /*//[SerializeField] AudioSource audioSource;
     AudioSource audioSource;
     [SerializeField] AudioManager audioManager;
     public static float[] samples = new float[512]; // 20k samples will be squized into an array of 512
@@ -50,7 +50,7 @@ public class AudioPeer : MonoBehaviour
     private void MakeFrequencyBands()
     {
         // 22050Hz / 512 = 43Hz per sample
-        /*
+        *//*
           20 - 60 Hz
           60 - 250 Hz
           250 - 500 Hz
@@ -59,7 +59,7 @@ public class AudioPeer : MonoBehaviour
           4000 - 6000 Hz
           6000 - 20000 Hz
         https://www.youtube.com/watch?v=mHk3ZiKNH48&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo&index=5&ab_channel=PeerPlay
-        */
+        *//*
 
         int counter = 0;
 
@@ -82,5 +82,5 @@ public class AudioPeer : MonoBehaviour
             frequencyBands[i] = average * 10;
         }
 
-    }
+    }*/
 }
