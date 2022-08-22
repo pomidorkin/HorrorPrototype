@@ -4029,9 +4029,9 @@ MonoBehaviour:
     m_Bits: 64
   FootstepsEventPath: event:/Event
   JumpingEventPath: event:/Jump and Land
-  MaterialParameterName: 
-  SpeedParameterName: 
-  JumpOrLandParameterName: 
+  MaterialParameterName: Material
+  SpeedParameterName: SpeedSwitch
+  JumpOrLandParameterName: Jump and Land
   StepDistance: 2
   RayDistance: 1.2
   StartRunningTime: 0.3

@@ -145,7 +145,5 @@ public class GetFMODSpectrumData : MonoBehaviour
             frequencyBands[i] = average * 10;
         }
 
-        Debug.Log(frequencyBands[0]);
-
     }
 }

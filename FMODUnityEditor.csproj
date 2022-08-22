@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,36 +53,39 @@
     <UnityVersion>2021.2.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\FMOD\src\Editor\EditorEventRef.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\CreateEventPopup.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EventReferenceUpdater.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\BankRefreshWindow.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\SettingsEditor.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EventCache.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\BoltIntegration.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EditorUtils.cs" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\FMOD\src\Editor\LogViewer.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EditorSettings.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\BankRefDrawer.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\SettingsEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EventManager.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\FMODEventTrackEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\FindAndReplace.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\BankRefreshWindow.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\CreateEventPopup.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EventCache.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EventBrowser.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\StudioParameterTriggerEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EditorUtils.cs" />
     <Compile Include="Assets\FMOD\src\Editor\StudioBankLoaderEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EventReferenceUpdater.cs" />
     <Compile Include="Assets\FMOD\src\Editor\FileReorganizer.cs" />
     <Compile Include="Assets\FMOD\src\Editor\FMODEventPlayableEditor.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\StudioGlobalParameterTriggerEditor.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EventBrowser.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\SetupWizard.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EditorSettings.cs" />
     <Compile Include="Assets\FMOD\src\Editor\ParamRefDrawer.cs" />
     <Compile Include="Assets\FMOD\src\Editor\EditorParamRef.cs" />
     <Compile Include="Assets\FMOD\src\Editor\EventRefDrawer.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\BankRefDrawer.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\StudioEventEmitterEditor.cs" />
     <Compile Include="Assets\FMOD\src\Editor\EditorBankRef.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\BankRefresher.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\SetupWizard.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\EventManager.cs" />
     <Compile Include="Assets\FMOD\src\Editor\StudioListenerEditor.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\ListView.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\FMODEventTrackEditor.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\StudioParameterTriggerEditor.cs" />
     <Compile Include="Assets\FMOD\src\Editor\StudioEventEmitterGizmoDrawer.cs" />
-    <Compile Include="Assets\FMOD\src\Editor\FindAndReplace.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\StudioGlobalParameterTriggerEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\EditorEventRef.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\StudioEventEmitterEditor.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\BankRefresher.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\ListView.cs" />
+    <Compile Include="Assets\FMOD\src\Editor\BoltIntegration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FMOD\src\Editor\FMODUnityEditor.asmdef" />
@@ -352,6 +355,18 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -364,20 +379,8 @@
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

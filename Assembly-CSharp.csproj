@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,14 +53,19 @@
     <UnityVersion>2021.2.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\AI\AiAgent.cs" />
     <Compile Include="Assets\Scripts\AI\AiSensor.cs" />
     <Compile Include="Assets\Scripts\Saving System\SaveManager.cs" />
     <Compile Include="Assets\Scripts\StageManager.cs" />
+    <Compile Include="Assets\Scripts\FMOD_Scripts\GetFMODSpectrumData.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\RoomSpecificScripts\RoomOne.cs" />
     <Compile Include="Assets\Scripts\AI\AiChasePlayerScript.cs" />
     <Compile Include="Assets\Scripts\Segment.cs" />
+    <Compile Include="Assets\Scripts\FMOD_Scripts\FMODStudioMaterialSetter.cs" />
     <Compile Include="Assets\Scripts\AI\AiStateMachine.cs" />
     <Compile Include="Assets\Scripts\CorridorLightSource.cs" />
     <Compile Include="Assets\Scripts\IInteractable.cs" />
@@ -93,8 +98,6 @@
     <Compile Include="Assets\Scripts\AudioVisualization\AudioPeer.cs" />
     <Compile Include="Assets\PlyerInputActions.cs" />
     <Compile Include="Assets\Scripts\Saving System\SavingData.cs" />
-    <Compile Include="Assets\Scripts\FMOD_Scripts\FMODStudioMaterialSetter.cs" />
-    <Compile Include="Assets\Scripts\FMOD_Scripts\GetFMODSpectrumData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -363,14 +366,14 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -834,21 +837,21 @@
       <Project>{32C61053-BA30-F178-D114-B06192649EB9}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="FMODUnity.csproj">
-      <Project>{56B6003D-B74A-099B-1600-C3F3D0B25511}</Project>
-      <Name>FMODUnity</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{FD83BB10-C3DD-A87C-D9A4-866B8B7D4700}</Project>
-      <Name>FMODUnityResonance</Name>
-    </ProjectReference>
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
       <Project>{6ADF14BA-EE0F-4D7B-8D76-607ACB7D937D}</Project>
       <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{56B6003D-B74A-099B-1600-C3F3D0B25511}</Project>
+      <Name>FMODUnity</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnityEditor.csproj">
       <Project>{E984C21F-8595-6C11-E78B-92B37B9ACB68}</Project>
       <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{FD83BB10-C3DD-A87C-D9A4-866B8B7D4700}</Project>
+      <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

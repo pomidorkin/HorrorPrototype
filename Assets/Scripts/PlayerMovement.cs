@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
         else                                                           // Else if however, the time inside 'TimeTakenToStep' is grater than 'StartRunningTime'...
             F_PlayerRunning = 0;                                       // ...we set 'F_PlayerRunning' to 0, which will be used in the 'PlayFootstep()' method to set our 'Speed Switch' parameter to 0 also.
         TimeTakenSinceStep = 0f;                                       // Finally, now that the player has taken the correct step, we reset our timer 'TimeTakenToStep' back to 0. Now th timer is tracking how much time has passed since the player took that last step.
-    }
+        }
 
 
     void GroundedCheck() // This method will update the 'PlayerTouchingGround' variable, to find out if the player is currently touching the ground or not.
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
             Footstep.setParameterByName(SpeedParameterName, F_PlayerRunning);                                        // We also set the Speed Parameter to match the value of the 'F_PlayerRunning' variable.
             Footstep.start();                                                                                        // We then play a footstep!.
             Footstep.release();                                                                                      // We also set our event instance to release straight after we tell it to play, so that the instance is released once the event had finished playing.
-        }
+            }
     }
 
     void PlayJumpOrLand(bool F_JumpLandCalc) // When this method is performed our Jumping And Landing event in FMOD will be told to play. A boolean variable is also created inside it's parameter brackets to be used inside this method. This variable will hold whichever value we gave this method when we called it in the Update function.
